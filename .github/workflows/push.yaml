@@ -27,13 +27,13 @@
 
 name: Publish Docker image
 
-on:
-  release:
-    types: [published]
+on: push
+#  release:
+#    types: [published]
 
 jobs:
-  push_to_registry:
-#  deploy:
+ # push_to_registry:
+  deploy:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
@@ -47,9 +47,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
           repository: ${{ github.repository }}
-          tag_with_ref: true
-          tag_with_sha: true
-          tags: ${{ github.sha }}
+
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
