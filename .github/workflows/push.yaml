@@ -25,7 +25,7 @@
 # Para obtener una versión más reciente, debes actualizar el SHA.
 # También puedes hacer referencia a una etiqueta o rama, pero la acción puede cambiar sin ninguna advertencia.
 
-name: Publish Docker image
+name: Publish Docker image in dockerhub
 
 on: push
 #  release:
